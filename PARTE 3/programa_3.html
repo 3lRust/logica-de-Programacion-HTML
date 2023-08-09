@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	let pantalla = document.querySelector("canvas");
+	let pincel = pantalla.getContext("2d");
+
+	pincel.filllStyle = "grey";
+	pincel.fillRect(0,0,600,400);
+
+
+	//creo la alerta exibir
+	function exibirAlerta(evento) {
+
+		//le indcamos a la funcion que obtenga la cordenada correcta en el eje x donde se da click, con offsetLeft le indico que reste lo sobrante en los lados
+		let x = evento.pageX - pantalla.offsetLeft;
+		//le indcamos a la funcion que obtenga la cordenada correcta en el eje x donde se da click
+		let y = evento.pageY - pantalla.offsetTop;
+		
+		//creo un evento que muestra en la consola lo que el progrma realiza-
+		console.log(evento);
+		alert(x + ";" + y);
+		alert("usted hizo un clic");
+
+	}
+		//funcion que bajo el evento onclick genera un circulo
+		function dibujarCirculo(evento){
+
+			//le indcamos a la funcion que obtenga la cordenada correcta en el eje x donde se da click, con offsetLeft le indico que reste lo sobrante en los lados
+			let x = evento.pageX - pantalla.offsetLeft;
+			//le indcamos a la funcion que obtenga la cordenada correcta en el eje x donde se da click
+			let y = evento.pageY - pantalla.offsetTop;
+
+			pincel.fillStyle = "blue";
+			pincel.beginPath();
+			pincel.arc(x,y,10,0,2*3.14);
+			pincel.fill();
+			console.log(x + ";" + y);
+		}
+
+	//llamo la alerta
+	//voy a asociar que al click llame a la funcion que creamos, recordad que al usar la funcion si la paso como un parametro de evento, debo reitrar los (), la pantalla esta asociada solo al tamaño del canva
+	//pantalla.onclick = exibirAlerta;
+
+	pantalla.onclick = dibujarCirculo;
+	
+</script>

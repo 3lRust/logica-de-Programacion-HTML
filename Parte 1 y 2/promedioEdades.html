@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+
+<h1>Programa Promedio Edades de Una Familia</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+			function promedioEdad(edad,nombre,cantidadPersonas){
+
+				  //creo un ciclo para ir almacenando cada edad y poder promediarlo
+				 totalEdad += edad; 
+			}
+
+			let cantidadPersonas = parseInt(prompt(`Ingrese Cuantos integran la familia:`));
+			let totalEdad = 0;
+
+			if(!isNaN(cantidadPersonas)){
+
+				for (var totalPersonas = 1; totalPersonas <= cantidadPersonas; totalPersonas++) {
+					
+					var nombre = prompt(`Introduce el nombre del integrante:`);
+					var edad = parseInt(prompt(`Introduce la edad de el/ella:`));
+
+					promedioEdad(edad,nombre);
+
+
+				}//fin for
+
+				 //imprimo el promedio usando la funcion y llamando el total.
+				 imprimir(`El promedio de Edad es de: ` + totalEdad/cantidadPersonas);
+
+			} else{
+					(`Introduciste un parametro erroneo`);
+				  }
+
+</script>

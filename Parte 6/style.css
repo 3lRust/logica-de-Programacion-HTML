@@ -1,0 +1,340 @@
+	body{
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	header{
+		background-color: #BBBBBB;	
+	}
+
+		#navBar{
+			width: 940px;
+			position: relative;/*la ubicacion del menu*/
+			margin: 0 auto;
+			
+		}
+
+	nav{/*menu alineado al centro izquierdo de la barra de navegacion*/
+		position: absolute;
+		top:  110px;
+		right:  0px;
+
+	}
+
+	nav li{
+		/*definimos la barra de navegacion llamando nav y la lista (li), pues el formato
+		tenemos que ajustar el diplay*/
+		display: inline;
+		margin: 10px;/*con inlne le estoy diciendo a htmlque solo ocupe el tamaño ded su contenido*/
+	}
+		/*vamos a editar el stilo de la etiqueta a*/
+	nav a{
+		text-transform: uppercase;
+		color: #000000;
+		font-weight: bold;
+		font-size: 22px;
+		text-decoration: none;
+	}
+
+	/*usando la propiedad hover captura el comportamiento del mouse/usuario y el click*/
+	nav a:hover{
+		color: #C78C19;
+		/*agregar unba decoracion (subrayado)*/
+		text-decoration: underline;
+	}
+		#productos{
+			width: 940px;
+			margin: 0 auto;
+			padding: 50px;
+		}
+		/*usaremos la propiedad inline-block*/
+		#productos li{ 
+			display: inline-block;
+			text-align: center;
+			/*que ocupe el 30 de espacio de la pagina cada elemento de li*/
+			width:  30%;
+			/*que la alineacion de cada item sea vertical*/
+			vertical-align: top;
+			margin: 0 1.5%;
+			padding: 30px 20px;
+			box-sizing: border-box;
+			/*diseñar el borde*/
+			border-color: #000000;
+			/*ancho del borde*/
+			border-width: 2px;
+			/*estilo del borde, existen diferentes propiedasdes para los efectos visuales.*/
+			border-style: solid;
+			/*redondeando las aristas con prpopiedad border radius
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			/**forma simplificada*/
+			border-radius:  10px;
+		}
+		/*daremos animacion a cada productos*/
+		#productos li:hover{
+			/*damos color que al capturar el movimiento cambie de color */
+			border-color: #C78C19;
+		
+
+		}
+		/*animacion cuando sea la eleccion activa*/
+		#productos li:active{
+			border-color:  #088C19;
+		}
+
+		#productos h2{
+			font-size: 30px;
+			font-weight: bold;
+		}
+	/*aqui asignamos el ajuste para el tamaño de la deescripciond el producto*/
+	.producto-descripcion{
+		font-size: 18px;
+	}
+		/*cuando el mouse ande sobre el elemento productos, y aplica a h2 este efecto*/
+		#productos li:hover h2{/*hover investigarlo*/
+				/*damos color que al capturar el movimiento cambie de color */			
+				font-size: 33px;
+		}
+	/*aqui ajustamos el tamaño y la separacion de arriba del precio*/
+	.producto-precio{
+		font-size: 20px;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	/*seccion de asta abajo de la pagina*/
+	footer{
+		text-align: center;
+		background: url(branding/bg.jpg);
+		/*darle un spaciamiento*/
+		padding:  40px;
+	}
+		#copyright{
+			/*al cophy asignamos margenes y color specifico 6ceros = blanco*/
+			color: #FFFFFF;
+			font-size: 13px;
+			margin: 20px;
+		}
+	
+	form{
+		margin: 40px 0;
+	}
+	/*con la coma podemos aplicar el mismo estilo a diferentes tags ej:  label, form p*/
+	form label, form legend{
+		display: block;
+		font-size: 20px;
+		margin: 0 0 10px;
+	}
+	.inputPadron{
+		display: block;
+		font-size: 20px;
+		margin: 0 0 20px;
+		padding: 10px 25px;
+		width: 50%;
+	}
+
+	.checkbox{
+		margin: 20px 0;
+	}
+	
+	.enviar{
+		width: 40%;
+		padding: 15px 0;
+		font-size: 18px;
+		font-weight: bold;
+		color: white;
+		background-color: orange;
+		border-radius: 5px;
+		/*le decimos que oscuresca lento, y con all le decimos que a todos los articulos dentro de esa clase*/
+		transition: 1s all;
+		cursor: pointer;
+
+	}
+	/*darle efecto bisual de oscureser*/
+	.enviar:hover{
+		background-color: darkorange;
+		transform: scale(1.2);
+	}
+	
+	table{
+		margin: 40px 40px;
+	}
+	/*le indicamos al head de las tablas de encabezado los colores, y tipo de letra*/
+	thead{
+		background-color: #555555;
+		color: white;
+		font-weight: bold;
+	}
+	/*le indicamos a las tablas de encabezado los bordes(grosor), linea llena, color negro*/
+	td, th{
+		border: 1px solid #000000;
+		/*separacion arriba 8px los costados 15*/
+		padding: 8px 15px;
+	}
+
+	/*//////////----Aqui inicia el CSS de HOME----///////////*/
+
+	.banner{
+		width: 100%;
+		padding: 0 0 2%;
+	}
+	/*
+	/*indicamos que solo los elementos hijos de tal seccion, mas a no a la gerarquia sub secuente
+	main > p{
+
+	}
+	/*para indicarlos a elementos de un subnivel, elegir el parrafo despues de la imagen
+	img + p{
+		background-color: yellow;
+	}
+	/*para todos los elementos despues de uno
+	img ~ p{
+		background: green;
+	}
+	*/
+	/*si queremos evitar que un elemento reciba la mejora indicamos lo sigueitne
+	.principal p:not(#mision){
+		background: green;
+	} 
+	*/
+	/*si quisieramos ser mas selectivos con un item en espeficico deberiamos */
+	.tituloPrincipal{
+		text-align: center;
+		font-size: 2em;
+		margin: 0 0 1em;
+		clear: left;
+		color: rgb(0,0,0);
+		text-shadow: 2px 2px black;
+	}
+
+	/*ejemplo de selectores avanzados*/
+	/*le indicamos que a la primera letra 
+	.tituloPrincipal:first-letter{
+		font-weight: bold;
+	}
+	/*pseudo elementos antes o despues
+	.tituloPrincipal:before{
+		content: "[";
+	}
+	/*pseudo elementos antes o despues
+	.tituloPrincipal:after{
+		content: "]";
+	}
+	/*efecto italico a a la primera linea
+	p:firs-line{
+		font-style: italic;
+	}*/
+
+	.principal{
+		padding: 3em;
+		background-color: #FEFEFE;
+		width:  940px;/*para centralizar es una practica comun*/
+		margin: 0 auto;
+	}
+	/*colocamos a la etiqueta p de clase principal un margen*/
+	.principal p{
+		margin: 0 0 1em;
+	}
+	/*La etiqueta strong de la clasee principal, sera negreita*/
+	.principal strong{
+		font-weight: bold;
+	}
+	/*colocamos a la etiqueta em de la clase princpal un estilo de tipo de letra*/
+	.principal em{
+		font-style: italic;
+	} 
+
+	.utensilios{
+		width: 160px;
+		/*propiedad para rodear la imagen con el texto*/
+		float: left;
+		margin: 0 20px 20px 0;
+	}
+
+	.mapa{
+		padding: 3em 0;
+		/*para darle grados o posiciones debe uno colocar (90deg, red, green, blue), donde 90deg son los grados*/
+		background: linear-gradient(#FEFEFE, #888888);
+		/*opcion con gradiente circular
+		background: radial-gradient(orange, #888888);*/
+
+	}
+
+	.mapa p{
+		margin: 0 0 2em;
+		text-align: center;
+	}
+
+	.mapaContenido{
+		width: 940px;
+		margin: 0 auto;
+	}
+
+	.diferencial{
+		padding: 3em 0;
+		background: #888888;
+
+	}
+
+	.contenido-diferencial{
+		width: 640px;
+		margin: 0 auto;
+	}
+	/*unicamente para la lista le damos un tamaño de 40% del total del contenedor, y colocamos esa lista alineada a la imagen, al ytop (arriba)*/
+		#diferencialUl{
+		width: 40%;
+		display: inline-block;
+		vertical-align: top;
+		}
+		/*le damos el tamaño de acuerdo al tamañoi del contenedor en 1.5%*/
+	.items{
+		line-height: 1.5;
+	}
+
+	.items:before{
+		content: "✰";
+	}	
+	/*uso de pseudo clases*/
+	.items:first-child{
+		font-weight: bold;
+	}
+
+	.imagenDiferencial{
+		width: 60%;
+		/*dando opacidad*/
+		transition: 400ms;
+		/*colocando sombra sentido contrario, primer parametro postyra ded avahi, segundo izq, 3ro color, 4to px, 5to sprit (expancion) */
+		/*si quiero poner mas, solo debo agregar una coma y la misma estructura*/
+		box-shadow: 10px 10px 30px 10px black;
+	}
+
+	.imagenDiferencial:hover{
+		opacity: 0.3;
+
+	}
+
+	.video{
+		width: 650px;
+		margin: 1em auto;
+	}
+	/*con media screen indcamos el tamaño que ajustara para hacer responsivo*/
+	@media screen and  (max-width: 810px){
+		h1{
+			text-align: center;
+		}
+		/*ponemos el menu abajo*/
+		nav{
+			position: static;
+		}
+
+		.navBar,.principal, .mapa, .diferencial, .mapaContenido, .contenido-diferencial, .video{
+			width: auto;
+		}
+		/*aloteramos la lista para darle un espacio uno abajo de otro*/
+		#diferencialUl, .imagenDiferencial{
+			width: 100%;
+			padding: 12px auto;
+
+		}
+	}
+

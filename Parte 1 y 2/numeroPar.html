@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+
+<h1>Programa Imprime todos los numeros pares del 1 al 100</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			function numerosPar(){
+
+				var numero = 2;
+				while (numero <= 100){
+					
+					imprimir(numero);
+					numero += 2;
+
+						
+				}//fin while
+
+
+			}//fin function	
+
+			imprimir(`Bienvenido este programa calcula los numeros pares asta el 100`);
+			numerosPar();
+			imprimir(`Fin`);
+</script>

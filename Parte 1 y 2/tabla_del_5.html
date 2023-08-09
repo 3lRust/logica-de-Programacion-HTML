@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+ejemplo tabla multiplicar version novato:
+
+<script>
+    document.write("5 por 1 es " + 5 * 1 + "<br>");
+    document.write("5 por 2 es " + 5 * 2 + "<br>");
+    document.write("5 por 3 es " + 5 * 3 + "<br>");
+    document.write("5 por 4 es " + 5 * 4 + "<br>");
+    document.write("5 por 5 es " + 5 * 5 + "<br>");
+    document.write("5 por 6 es " + 5 * 6 + "<br>");
+    document.write("5 por 7 es " + 5 * 7 + "<br>");
+    document.write("5 por 8 es " + 5 * 8 + "<br>");
+    document.write("5 por 9 es " + 5 * 9 + "<br>");
+    document.write("5 por 10 es " + 5 * 10 + "<br>");
+     document.write("<br>");
+     document.write("<br>");
+</script>
+
+<!--version modificada y mas eficiente version jr -->
+
+<script type="text/javascript">
+
+    document.write("Ejemplo Tabla multiplicar version JR:");
+    document.write("<br>");
+    
+    //aqui declaro mi variable y pido que introduscan el numero a multiplicar
+    let numeroAmultiplicar = prompt("Ingresa la tabla que quieres conocer:");
+    console.log("gracias");
+    
+
+    //este for lo que hace es a la variable i evaluarla y si es menor que 10 se suma un numero asta llegar a 10
+    for (var i = 1; i <= 10; i++) {
+
+        //creo la multiplicacion para almacenarla en la variable resultado, usando como operadores numeroAmultiplicar y i
+      let  resultado = numeroAmultiplicar * i;
+
+        //idico los resultados de mi operacion usando backticks para no tener que colocar esa determinada cantidad de veces los numeros.
+         document.write(`${numeroAmultiplicar} * ${i} = ` + resultado + '<br>');
+        
+             }
+              document.write("<br>");
+
+    
+</script>

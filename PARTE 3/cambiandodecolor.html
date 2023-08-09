@@ -1,0 +1,36 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400); 
+    var colores = ["blue", "red", "green"];
+    var indiceColorActual = 0; // comienza con blue
+
+    function dibujarCirculo(evento){//evento recibe las cordenadas que asigna a x y y
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;    
+        pincel.fillStyle = colores[indiceColorActual];//le indciamos al pincel que rellene con el indice del color
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x + "," + y);        
+    }
+
+    pantalla.onclick = dibujarCirculo;//al escribir esta instruccion el indico que por cada click del mouse este dibuje el circulo
+
+    //creo la funcion alterar color
+    function alterarColor() {
+        //al indice lo aumento por si mismo
+        indiceColorActual++;
+        //evaluo si el indice es mayor a la cantidad del array y lo redusco // lo regreso al primer valor orignal "0"
+        if(indiceColorActual>= colores.length) {
+             indiceColorActual = 0; //vuelve para el primer color, blue
+        }
+        return false; //menú contextual padrón de `canvas` no sea exhibido
+    }
+
+    pantalla.oncontextmenu = alterarColor;//mando a llamar mi funcion
+
+</script> 

@@ -1,0 +1,154 @@
+<meta charset="utf-8">
+
+<h1>Canva que crea un creeper</h1><br>
+<canvas width = "600" height="400"></canvas>
+
+<script type="text/javascript">
+	
+	//comienzo creando mis variables:
+	let pantalla = document.querySelector(`canvas`);
+	let pincel = pantalla.getContext(`2d`);
+
+		function ojosIzq(){
+			//le asigno un color al segundo cuadro:
+			pincel.fillStyle = `black`;
+			//le indco que se posicione para moverse:
+			pincel.beginPath;
+			//le indico donde colocar la primer linea hacia abajo de lado izq
+			pincel.moveTo(50,150);
+			//comienzo a diseñar los rectangulos con la funcion fillRect, hacia abajo lado der
+			pincel.lineTo(150,150);
+			//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+			pincel.lineTo(150,70);
+			//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+			pincel.lineTo(50,70);
+			//comienzo a diseñar los rectangulos con la funcion fillRect
+			pincel.lineTo(50,0);
+			//le digo que llene ese grafico:
+			pincel.fill();
+
+		}
+
+			function ojoDer(){
+				//le asigno un color al segundo cuadro:
+				pincel.fillStyle = `black`;
+				//le indco que se posicione para moverse:
+				pincel.beginPath;
+				//le indico donde colocar la primer linea hacia abajo de lado izq
+				pincel.moveTo(300,75);
+				//comienzo a diseñar los rectangulos con la funcion fillRect, hacia abajo lado der
+				pincel.lineTo(300,40);
+				//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+				pincel.lineTo(300,150);
+				//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+				pincel.lineTo(200,150);
+				//comienzo a diseñar los rectangulos con la funcion fillRect
+				pincel.lineTo(200,70);
+				//le digo que llene ese grafico:
+				pincel.fill();
+			}
+
+				function narisCreeper(){
+					//le asigno un color al segundo cuadro:
+					pincel.fillStyle = `black`;
+					//le indco que se posicione para moverse:
+					pincel.beginPath;
+					//le indico donde colocar la primer linea hacia abajo de lado izq
+					pincel.moveTo(150,200);
+					//comienzo a diseñr los rectangulos con la funcion fillRect, hacia abajo lado der
+					pincel.lineTo(150,150);
+					//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+					pincel.lineTo(200,150);
+					//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+					pincel.lineTo(200,150);
+					//comienzo a diseñ1ar los rectangulos con la funcion fillRect
+					pincel.lineTo(200,200);
+					//le digo que llene ese grafico:
+					pincel.fill();
+				}
+
+				function bocaCreeper(){
+					//le asigno un color al segundo cuadro:
+					pincel.fillStyle = `black`;
+					//le indco que se posicione para moverse:
+					pincel.beginPath;
+					//le indico donde colocar la primer linea hacia abajo de lado izq
+					pincel.moveTo(100,250);
+					//comienzo a diseñr los rectangulos con la funcion fillRect, hacia abajo lado der
+					pincel.lineTo(100,100);
+					//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+					pincel.lineTo(100,200);
+					//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+					pincel.lineTo(250,200);
+					//comienzo a diseñ1ar los rectangulos con la funcion fillRect
+					pincel.lineTo(250,250);
+					//le digo que llene ese grafico:
+					pincel.fill();
+				}
+
+
+					function bigoteDerCreper(){
+
+						//le asigno un color al segundo cuadro:
+						pincel.fillStyle = `black`;
+						//le indco que se posicione para moverse:
+						pincel.beginPath;
+						//le indico donde colocar la primer linea hacia abajo de lado izq
+						pincel.moveTo(200,300);
+						//comienzo a diseñr los rectangulos con la funcion fillRect, hacia abajo lado der
+						pincel.lineTo(200,200);
+						//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+						pincel.lineTo(200,250);
+						//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+						pincel.lineTo(250,250);
+						//comienzo a diseñ1ar los rectangulos con la funcion fillRect
+						pincel.lineTo(250,300);
+						//le digo que llene ese grafico:
+						pincel.fill();	
+
+					}
+
+					function bigoteIzqCreper(){
+
+						//le asigno un color al segundo cuadro:
+						pincel.fillStyle = "black";
+						//le indco que se posicione para moverse:
+						pincel.beginPath;
+						//le indico donde colocar la primer linea hacia abajo de lado izq
+						pincel.moveTo(200,350);
+						//comienzo a diseñr los rectangulos con la funcion fillRect, hacia abajo lado der
+						pincel.lineTo(200,300);
+						//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la derecha
+						pincel.lineTo(200,300);
+						//comienzo a diseñar los rectangulos con la funcion fillRect, hacia la izq
+						pincel.lineTo(150,200);
+						//comienzo a diseñ1ar los rectangulos con la funcion fillRect
+						pincel.lineTo(250,200);
+						//le digo que llene ese grafico:
+						pincel.fill();	
+
+					}
+						function cabezaCreper(){
+							//le asigno un color al primer cuadro:
+							pincel.fillStyle = `green`;
+							//comienzo a diseñar los rectangulos con la funcion fillRect
+							pincel.fillRect(0,0,350,300);
+						}
+
+					
+							function creper(){
+								cabezaCreper();
+								ojosIzq();
+								ojoDer();
+								narisCreeper();
+								bocaCreeper();
+								bigoteDerCreper();
+								bigoteIzqCreper();
+							}
+
+			
+								creper();
+
+
+
+</script>

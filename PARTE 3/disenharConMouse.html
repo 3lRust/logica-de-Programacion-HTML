@@ -1,0 +1,54 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    //le indico a la variable pantalla que almacene con document.querySelector: es un método en JavaScript que se utiliza para seleccionar el primer elemento que coincida con un selector CSS especificado en un documento HTML.
+    var pantalla = document.querySelector('canvas');
+    //a la variable pincel le asigno la variable pantalla, y uso el metodo getContext para obtener el contexto del dibujo ya sea 2d,3d, el cual se usa para dibujar texto, formas, imagenes o graficos como si fuera un linezo
+    var pincel = pantalla.getContext('2d');
+    //le indico a la variable pincel con la propiedad fillStyle que establesca el color o patron para rellenar las formas
+    pincel.fillStyle = 'grey';
+    //le indico a la variable pincel con el metodo fillRect que rellene el rectangulo en las cordenadas indicadas 0,0, con altura 600 anchura 400
+    pincel.fillRect(0, 0, 600, 400);
+
+    //creo la variable puedoDibujar y  la inicializo como false pues mas adelante se usara para revisar si el linezo esta limpio
+    var puedoDibujar = false;
+
+    //creo la funcion dibujarCirculo que al recibir el evento (las coordenadas), dibujara el circulo
+    function dibujarCirculo(evento) {
+        //si el lienzo esta limpio, osea la variable booleana esta como false, entonces continua el programa
+        if(puedoDibujar) {
+            //creo las variables que van a recibir los parametros del evento pageX (propiedad que recibe la posicion horizontal del mouse), en tanto pageY recibe la vertical
+            //y le resto 
+            var x = evento.pageX - pantalla.offsetLeft;/*En JavaScript, offsetLeft es una propiedad de un elemento HTML que devuelve la distancia horizontal entre el borde izquierdo del elemento y el borde izquierdo del elemento padre más cercano con una posición establecida (es decir, con una posición diferente a static), lo mismo pasa para offsetTop pero de superior a inferior*/
+            var y = evento.pageY - pantalla.offsetTop;
+            //ahora le indico con la propiedad el color que usara para el relleno
+            pincel.fillStyle = 'blue';
+            //con el metodo  beginPath() para iniciar una nueva ruta
+            pincel.beginPath();
+            // el método arc() se utiliza para crear un arco en una ruta de lienzo (canvas) HTML5
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            //troke() o fill() para dibujar la ruta
+            pincel.fill();
+        }
+
+    }
+
+    //onmousemove es un evento en JavaScript que se activa cuando el puntero del mouse se mueve sobre un elemento en el documento HTML.
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+        //creo la funcion que habilita el poder dibujar 
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+        //creo la funcion que desahibilta el poder dibujar
+        puedoDibujar = false;
+    }
+
+    //onmousedown es un evento en JavaScript que se activa cuando el botón del mouse se presiona mientras se encuentra sobre un elemento en el documento HTML.
+    pantalla.onmousedown = habilitarDibujar;
+    //onmouseup es un evento en JavaScript que se activa cuando se suelta el botón del mouse después de haber sido presionado mientras se encuentra sobre un elemento en el documento HTML.
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>

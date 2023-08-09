@@ -1,0 +1,153 @@
+	header{
+		background-color: #BBBBBB;	
+	}
+		#navBar{
+			width: 940px;
+			position: relative;/*la ubicacion del menu*/
+			margin: 0 auto;
+			
+		}
+			
+	nav{/*menu alineado al centro izquierdo de la barra de navegacion*/
+		position: absolute;
+		top:  50%;
+		right:  10px;
+
+	}
+		#logo{
+			width: 10%;
+		}
+	nav li{
+		/*definimos la barra de navegacion llamando nav y la lista (li), pues el formato
+		tenemos que ajustar el diplay*/
+		display: inline;
+		/*con inlne le estoy diciendo a htmlque solo ocupe el tamaño ded su contenido*/
+		margin: 1px;
+	}
+		/*vamos a editar el stilo de la etiqueta a*/
+	nav a{
+		text-transform: uppercase;
+		color: #000000;
+		font-weight: bold;
+		font-size: 22px;
+		text-decoration: none;
+	}
+	/*usando la propiedad hover captura el comportamiento del mouse/usuario y el click*/
+	nav a:hover{
+		color: #C78C19;
+		/*agregar unba decoracion (subrayado)*/
+		text-decoration: underline;
+	}
+
+	body{
+		/*background-color: #CCCCCC;*/
+	}
+				/*Parrafos*/
+	p{
+		text-align: 	center;
+		background-color: #CCCCCC;
+	}
+	/*le indico que solo el em//haciendo selecciones especificas.*/
+	em strong{
+		color:  darkred;
+	}
+		#mision{
+			font-size: 20px;
+		}
+
+		#banner{
+			width: 100%;
+		}
+			.principal{
+				background-color: #CCCCCC;
+				/*paggind/espaciamiento entre bloques*/
+				padding: 20px;
+			}
+
+			.titulosCentrado{
+				text-align: center;
+				/*texto en negrita*/
+				font-weight: bold;
+
+			}
+			.diferencial{
+				overflow: auto;
+			}
+
+			.principal{
+				display: inline-block;
+				width: 100%;
+				margin: 0px;
+				box-sizing: border-box;
+				border-color: #000000;
+				border-width: 1px;
+				border-style: solid;
+				border-radius: 10px;
+			}
+			.diferencial ul{
+				display: inline-block;
+				text-align: center;
+				/*que ocupe el 30 de espacio de la pagina cada elemento de li*/
+				width:  100%;
+				/*que la alineacion de cada item sea vertical*/
+				vertical-align: top;
+				margin: 20px;
+				padding: 15px;
+				box-sizing: border-box;
+				/*diseñar el borde*/
+				border-color: #000000;
+				/*ancho del borde*/
+				border-width: 2px;
+				/*estilo del borde, existen diferentes propiedasdes para los efectos visuales.*/
+				border-style: solid;
+				/*redondeando las aristas con prpopiedad border radius
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				/**forma simplificada*/
+				border-radius:  10px;
+			}
+			.diferencial li{
+				display: grid;
+				padding: 10px;
+				font-weight: bold;
+			}
+			/*daremos animacion a cada productos*/
+		.diferencial ul:hover{
+			/*damos color que al capturar el movimiento cambie de color */
+			border-color: #C78C19;
+			/*damos color que al capturar el movimiento cambie de color */			
+				font-size: 20px;
+		}
+		/*animacion cuando sea la eleccion activa*/
+		.diferencial ul:active{
+			border-color:  #088C19;
+
+		}
+		#diferencial{
+			background-color: #ffffff;
+			/*paggind/espaciamiento entre bloques usadno la propiedad padding*/
+			padding: 20px;
+			vertical-align: middle;
+
+		}
+		/*para hacer que la imagen este aun lado de la lista (ya que la lista usa elk 100%)
+		 usaremos la propiedad display inline block, indicando que solo use el espacio del contenido
+		  y se pueda usar el espacio que no utilice*/
+		#diferencialUl{
+			display: inline-block;
+			/*para centrar en direccion vertical usamos la propiedad vertical aling*/
+			vertical-align: top;
+			/*le daremos el 30% de tamaño*/
+			width: 30%;		
+			margin: 1% ;
+
+
+		}
+		#imagenDiferencial{
+			float: right;
+			width: 90%;
+			margin-left: 5px;
+			border-radius: 10px;
+		}

@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+
+<h1>Programa que calcula el IMC (version ejemplo oracle ONE)</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			function calcularImc(peso,altura){
+
+				return (peso/(altura*altura));
+
+			}//fin calcularImc
+
+
+				 nombre = prompt(`Informe su nombre:`);
+				 pesoInformado = prompt(`${nombre} Informe su peso: `);
+				 alturaInformada = prompt(`${nombre} Informe su altura: `);
+
+					imcCalculado = calcularImc(pesoInformado,alturaInformada);
+					imprimir(`${nombre}, tu imc calculado es: ` + imcCalculado);
+
+					if (imcCalculado < 18.5){
+						imprimir(`Por debajo de lo recomndedado`);
+					}
+						if ( imcCalculado >= 18.5 && imcCalculado <= 25 ){
+							imprimir(`Peso normal`);
+						}
+							if ( imcCalculado > 25 && imcCalculado <= 30 ){
+								imprimir(`IMC considerado como sobrepeso`);
+							}
+								if ( imcCalculado > 30 ){
+									imprimir(`IMC considerado como obesidad`);
+								}
+
+
+</script>

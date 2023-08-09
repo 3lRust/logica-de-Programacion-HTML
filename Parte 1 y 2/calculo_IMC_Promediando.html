@@ -1,0 +1,66 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA Calculo IMC para varias personas y promediando</h1>
+<script>
+
+    //creo la funcion saltar linea
+    function saltarLinea() {
+        //coloco la impresion en pantalla para saltar linea
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");  
+        //con hr creo lineas de separacion por cada argumento/texto
+        document.write("<hr></hr>");  
+        document.write("<br>");    
+        document.write("<br>");   
+    }  
+    //creo la funcion imprimir texto/frase
+    function imprimir(frase) {
+        //le indico que en base a la frase que se introdusca en imprimir la coloque a la variable frase y uso el tag BIG par hacer grande la letra
+        document.write("<big>" + frase + "</big>");
+        saltarLinea();
+    }
+
+    // Declaro la variable imcTotal fuera de la función
+    let imcTotal = 0;
+
+    //creo la funcion calcular indice de masa corporal
+    function calcularIMC(pesoPersona, alturaPersona){
+
+                   //genero la evaluacion y calculo e imprimo los valores pasando el parametro
+                     imprimir(`${nombre} tu Indice de Masa Corporal es: ` + ( imc = (pesoPersona/ (alturaPersona * alturaPersona) ) ));
+             
+                            imcTotal +=  imc;
+                                  
+    }//fin funcion calcularIMC
+
+    alert("Bienvenido el siguiente programa te permitira calcular el Indice de Masa Corporal");
+
+    let cantPersonas = prompt(`Indicame a cuantas personas se les evaluara su IMC, para calcular el promedio:`);
+
+        if (!isNaN(cantPersonas)) {
+              for (var totalPersonas = 1; totalPersonas <= cantPersonas; totalPersonas++) {
+                    //pido el nombre de quien IMc sera calculado:
+                nombre = prompt("Indicame su nombre:");
+                pesoPersona = prompt(`${nombre} indicame su Peso en KG:`);
+                alturaPersona = prompt(`${nombre} indicame su Altura en CM:`);
+
+                //mando a llamar la funcion creada antes, dandole los parametros a calcular.
+                calcularIMC(pesoPersona,alturaPersona);
+                              
+                }//fin for  
+
+                //imprimo el promedio usando la funcion y llamando el total.
+                imprimir(`El promedio de IMC es de: ` + imcTotal/cantPersonas);
+                    //creo un ciclo para ir almacenando cada imc y poder promediarlo
+                 
+
+        }//fin if
+            else{
+                alert(`Introduciste un parametro no valido`);
+            }
+  
+    
+
+   
+
+</script>

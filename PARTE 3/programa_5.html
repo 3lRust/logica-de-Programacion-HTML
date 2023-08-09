@@ -1,0 +1,91 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    //creamos la variable pantalla que va a recibir nuestros datos (el canva)
+    var pantalla = document.querySelector("canvas");
+    //usamos el metodo getContext para indicar si tra<bajaremos en 2d o 3d
+    var pincel = pantalla.getContext("2d"); 
+    //padronizamos el tamaño del radio
+    let radio = 10;   
+    //le indicamos que color usara para delimitar la zona, con el metodo fillStyle    
+    pincel.fillStyle = "lightgrey";
+    //con el metodo fillRect indicamos que rellene la zona delimitada con el color descrito anteriormente
+    pincel.fillRect(0,0,600,400); 
+    //creo el padron de las coordenadas:
+    var xAleatorio;
+    var yAleatorio;
+
+    function dibujarCircunferencia(x,y,radio,color){
+        //creamos la funcion circunferencia.
+        pincel.fillStyle = color;
+        //usamos el metodo beginPath para iniciar el punto de partida
+        pincel.beginPath();
+        //el metodo arc dibuja el circulo recibiendo los parametros x,y como coordenadas, el radio, angulo inicio y fin, y sentido del reloj. 
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        //con el metodo fill indicamos que dibuje el relleno del circulo
+        pincel.fill();
+    }    
+
+    function limpiarPantalla(){
+        //el metodo clearRect indica a la variable pincel que borre los datos en las cordenadas o canva indicado
+        pincel.clearRect(0,0,600,400);
+
+    }
+
+    var x = 0
+
+    function actualizarPantalla(){
+
+        limpiarPantalla();
+         //creamos las coordenadas x,y que seran aleatorias y seran para dibujar la circungerencia
+         xAleatorio = sortearPosicion(600);
+         yAleatorio = sortearPosicion(400);
+
+        //dibujo el objetivo recibiendo los parametros x,y
+        dibujarObjetivo(xAleatorio,yAleatorio);
+        x++;
+    }
+
+    //para que nuestro circulo aparezca de forma aleatoria creamos la funcion, y le asignamos x,y las coordenadas donde queremos que aparezcan
+    function dibujarObjetivo(x,y){
+        dibujarCircunferencia(x,y,radio + 20,"red");
+        dibujarCircunferencia(x,y,radio + 10,"white");
+        dibujarCircunferencia(x,y,radio,"red");
+    }
+    
+    //creo la funcion aleatorio que regresara los datos de la posicion del target
+    function sortearPosicion(maximo){
+        return Math.floor(Math.random()*maximo);
+    }
+    
+   
+    //setInterval: esta funcion se utiliza para ejecutar una funcon o fregmento de codigo repetidamente despues de un intervvalo de tiempo determinado, se termina con clearInterval()
+    setInterval(actualizarPantalla,1000);
+
+    //para simular el disparo con el mouse, debe aparecer un mensaje que acerte al circulo rojo pequeño, debo calcular el rango de valores posibles para acertar el disparo.
+    
+
+    //creo una funcion que al momento que se haga click, la llamare disparo
+    function disparar(evento){
+        
+        //creo 2 variables para salvar donde se da click, restandole la posicion correcta
+        /*offsetLeft es una propiedad de un elemento HTML que devuelve la distancia horizontal entre el borde izquierdo del elemento y el borde izquierdo del elemento padre*/ 
+        var x = evento.pageX - pantalla.offsetLeft;//capturo posicion x horizontal
+        var y = evento.pageY - pantalla.offsetTop;//capturo posicion y vertical
+        
+        //creo una condicional para saber donde se esta haciendo click
+        if ((x < xAleatorio + radio)&&//le indico que si el disparo en el eje horizontal es menor al perimetro derecho derecho
+            (x > xAleatorio - radio)&&//le indoc que si el disparo esta dentro de la x del perimetro izquierdo.
+            (y < yAleatorio + radio)&&//le indico que si el disparo esta en el eje vertical es menor al perimetro superior
+            (y > yAleatorio - radio)//le indico que si el disparo esta en el eje vertical es mayor a la diferencia del perimetro inferior
+            ) {
+            alert("Tiro Certero");
+    }//fin if mini mapacarteciano
+
+        
+    }
+
+    //capturo el evento del click con el metodo onclick
+    pantalla.onclick = disparar;
+
+</script> 

@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+
+<h1>Programa Juego de Adivinaciòn Version Mejorada</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+		
+			//creo un ciclo for que se encarga de imprmir x cantidad de veces un argumento que indiquemos dentro.
+			for (let lineas = 1; lineas <= 3; lineas++) {
+				for (let columnas = 1; columnas <= 10; columnas++) {
+					document.write(`*`);
+
+				}
+				saltarLinea();
+					
+			}
+
+				saltarLinea();
+					saltarLinea();
+			imprimir(`Fin`);
+
+</script>

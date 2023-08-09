@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+
+<h1>Programa Juego de Adivinaciòn</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			//creo la variable y coloco un numero aleatorio con random, y redondeo el numero con round.
+			var numeroPensado = Math.round(Math.random()*10);
+			//lo comparo con el numero que ingrese el usuario
+			var numeroLanzado = parseInt(prompt(`Ingresa un nùmero entre 0-18`));
+			//creo una condicion para revisar el numero
+			if (numeroPensado == numeroLanzado){
+				imprimir(`Usted acerto`);
+			}   else{
+					imprimir(`Usted errò, el nùmero pensado era ${numeroPensado}`);
+				}
+
+</script>

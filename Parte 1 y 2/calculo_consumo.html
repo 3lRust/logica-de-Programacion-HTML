@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+
+<h3>¿Alcohol o gasoina?</h3>
+
+<p>Problema: Si un carro tiene un tanque de 40 litros. Usando gasolina y consumiendo todo el tanque se hace un recorrido de 480 kilómetros. ¿Cuál es la eficiencia del carro usando gasolina? o sea, ¿cuántos kilómetros recorre el carro por cada litro de gasolina? Para calcular la eficiencia: divide la distancia recorrida entre la cantidad de litros gastados. Imprime el valor utilizando document.write. Organiza las cuentas en variables.</p>
+
+<script type="text/javascript">
+	
+	//doy la bienvenida y pido su nombre
+	let nombre = prompt(`Que tal Bienvenido a Alcohol o Gasolina, indicame tu nombre:`);
+
+
+	/*pregunto el tipo de combustible que usa el auto, para evaluarlo en una condicianal de tipo IF, de modo
+	que si la respuesta es 1 hara lo siguiente:
+
+	*/
+	let tipoDeCombustible = prompt(`${nombre} de que tipo es tu combustible? 1) Alcohol  2) Gasolina ` + " usa 1 o 2 para seleccionar la respuesta.");
+
+
+	if (tipoDeCombustible == 1) {
+				//declaro las variables
+			let litros = prompt(`Cual es el total de litros que tiene tu auto ${nombre} : `);
+
+
+			//pido se indique el reccorrido
+			let distancia = prompt(`Proporcioname la distancia reccorrida en KM: `);
+
+
+			//calculo la eficiencia del auto
+
+			document.write(`${nombre} la eficiencia por km de tu auto es de: <br>` + distancia/litros + `km/lt` );
+	}
+
+	//si la respuesta es 2:
+		if (tipoDeCombustible == 2) {
+				//declaro las variables
+			let litros = prompt(`Cual es el total de litros que tiene tu auto ${nombre} : `);
+
+
+			//pido se indique el reccorrido
+			let distancia = prompt(`Proporcioname la distancia reccorrida en KM: `);
+
+
+			//calculo la eficiencia del auto
+
+			document.write(`${nombre} la eficiencia por km de tu auto es de: <br>` + distancia/litros + `km/lt` );
+	}
+
+	
+
+</script>

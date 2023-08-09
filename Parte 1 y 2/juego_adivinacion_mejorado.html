@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+
+<h1>Programa Juego de Adivinaciòn Version Mejorada</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			//creo la variable y coloco un numero aleatorio con random, y redondeo el numero con round.
+			let numeroPensado = Math.round(Math.random()*10);
+			let intentos = 3;
+			let contador = 1;
+			
+				//creo mi ciclo de iteracion para ejecutar la cantidad de intentos
+				while (contador <= intentos){
+
+					//pido indique el numero
+					var numeroLanzado = parseInt(prompt(`Ingresa un nùmero entre 0-10`));
+					  //creo una condicion para revisar el numero y compararlo
+						if (numeroPensado == numeroLanzado){
+							alert(`Usted acerto en el ${intentos}, el numero pensado era: ${numeroPensado}`);
+							//esta condicion termina la ejecucion
+							break;
+						}   else{
+								alert(`Usted errò`);
+							}
+
+								contador++;
+				}//fin while
+
+				//como el todo tierno perdio, le digo los numeros si gano o perdio una vez terminado el programa.
+				if (numeroPensado == numeroLanzado){
+							imprimir(`Usted acerto en el ${intentos}, el numero pensado era: ${numeroPensado}`);
+							
+						}   else{
+								imprimir(`Usted errò en el intento: ${intentos}, el numero pensado era: ${numeroPensado}`);
+							}
+
+
+			imprimir(`Fin`);
+
+</script>

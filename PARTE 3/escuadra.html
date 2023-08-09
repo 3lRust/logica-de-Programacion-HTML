@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+
+<h1>Programa que diceña una escuadra</h1>
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	
+	//creo mis variables:
+	var pantalla = document.querySelector(`canvas`);
+	var pincel = pantalla.getContext(`2d`);
+
+	//fyllStyle es una caracteristica/propiedad asi que sedebe 
+			pincel.fillStyle = "lightgrey";
+			//indicamos al pincel que rellene la pantalla con la funcion fillRect
+			pincel.fillRect(0,0,600,400);
+
+	//triangulo 1 
+		//defino un nuevo colocr
+		pincel.fillStyle = "red";
+		//comienzo con crear el inicio del camino
+		pincel.beginPath();
+		//le indico donde moverse:
+		pincel.moveTo(50,50);
+		//deseño una linea de la posicion 50 (arriba) a la posicion 400 (abajo)
+		pincel.lineTo(50,400);
+		//le indico que cree otra linea de 400 a 400
+		pincel.lineTo(400,400);
+				//relleno el primer triangulo;
+		pincel.fill();
+
+				//triangulo 1 
+		//defino un nuevo colocr
+		pincel.fillStyle = "green";
+		//comienzo con crear el inicio del camino
+		pincel.beginPath();
+		//le indico donde moverse:
+		pincel.moveTo(100,175);
+		//deseño una linea de la posicion 50 (arriba) a la posicion 400 (abajo)
+		pincel.lineTo(100,350);
+		//le indico que cree otra linea de 400 a 400
+		pincel.lineTo(275,350);
+				//relleno el primer triangulo;
+		pincel.fill();
+
+
+</script>

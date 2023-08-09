@@ -1,0 +1,62 @@
+<h1>Introduccion a las variables</h1>
+<br>
+
+<h2>Calculo de promedio</h2>
+
+Ejemplo de calculo de promedio de edades, con variables previamente definidas:
+<br>
+
+
+
+
+<script type="text/javascript">
+
+	//linea logica:
+	//declaracion de variable
+	let year = 2025 // en js debemos respetar el concepto de camelCase, iniciar siempre en minuscula y la sig palabra ejemplo: peliculaTerror.
+	
+	//impresiòn en pantalla
+	document.write("Juan tiene:" + (year-2000));
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+	document.write("Pedro tiene:" + (year-1995));
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+
+	año = 2030;
+
+
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+	document.write("Carlos tiene:" + (year-2005));
+	document.write("<br>");
+	document.write("Jimena tiene:" + (year-2000));
+	document.write("<br>");
+	document.write("<br>");
+	document.write("Samanta tiene:" + (year-1995));
+	document.write("<br>");
+	document.write("Laura tiene:" + (year-2005));
+	document.write("<br>");
+
+	//creamos la variable para saber la edad de las personas:
+	let edadJimena = 10;
+	let edadSamanta = 25;
+	let edadLaura = 15;
+
+	//igualmente a una variable se le puede atribuir string, ejemplo:
+
+	let nombre1 = "Jimnea";
+	let nombre2 = "Samanta";
+	let nombre3 = "Laura";
+
+	//creamos una variable para calcular el promedio:
+	let promedio = ((edadJimena + edadSamanta + edadLaura)/3);
+
+	document.write("El promedio de las edades de " + nombre1 + ", " + nombre2 + " y " + nombre3 + " es: "+ Math.round(promedio) + " años");
+	document.write("<br>");
+
+
+</script>

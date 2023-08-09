@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	
+	function dibujarCuadrado(x,y,color){//dedntro de los ()indico los valores provenientes al llamar la funcion
+			//vmaosa crear una variable que reciba el canvas
+		let pantalla = document.querySelector(`canvas`);
+		let pincel = pantalla.getContext(`2d`); 
+		//dibujo un cuadrado
+		pincel.fillStyle = color;//propiedad
+		pincel.fillRect (x,y,50,50);//funcion
+		pincel.strokeStyle = "black";
+		pincel.strokeRect(x,y,50,50);
+
+	}
+
+
+	/*opcion con while
+	var x = 0;
+		while(x<600){
+
+			//llamo la funcion 1 vez
+	dibujarCuadrado(x,0,"red");//dentro de los parametros indico que es lo que quiero
+	//indico los valores dentro del parentecsi.
+	x= x+50;
+		}*/
+
+		for (let x=0; x < 600; x = x + 50){
+			dibujarCuadrado(x,0,"red");//dentro de los parametros indico que es lo que quiero
+			//indico los valores dentro del parentecsi.
+			dibujarCuadrado(x,50,"yellow");
+			dibujarCuadrado(x,100,"green");
+		}
+
+
+</script>

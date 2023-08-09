@@ -1,0 +1,59 @@
+body{
+	/*background-color: #CCCCCC;*/
+}
+	/*Titulo*/
+	#tituloPrincipal{
+		
+		padding-left: 30px;
+		
+			}
+		/*Parrafos*/
+		p{
+			text-align: 	center;
+			background-color: #CCCCCC;
+				}
+				/*le indico que solo el em//haciendo selecciones especificas.*/
+				em strong{
+					color:  darkred;
+				}
+					#mision{
+						font-size: 20px;
+					}
+
+					#banner{
+						width: 100%;
+					}
+						.principal{
+							background-color: #CCCCCC;
+							/*paggind/espaciamiento entre bloques*/
+							padding: 20px;
+						}
+
+						.titulosCentrado{
+							text-align: center;
+						}
+
+
+						.items{
+							fomt-style: italic;
+						}
+
+						#diferencial{
+							background-color: #ffffff;
+							/*paggind/espaciamiento entre bloques usadno la propiedad padding*/
+							padding: 20px;
+						}
+						/*para hacer que la imagen este aun lado de la lista (ya que la lista usa elk 100%)
+						 usaremos la propiedad display inline block, indicando que solo use el espacio del contenido
+						  y se pueda usar el espacio que no utilice*/
+						ul{
+							display: inline-block;
+							/*para centrar en direccion vertical usamos la propiedad vertical aling*/
+							vertical-align: top;
+							/*le daremos el 30% de tamaño*/
+							width: 30%;
+							margin-right: 15%;
+						}
+						#imagenDiferencial{
+							width: 50%;
+						}

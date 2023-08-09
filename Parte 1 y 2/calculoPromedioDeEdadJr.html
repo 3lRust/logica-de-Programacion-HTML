@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<script>
+
+//Programa que calcula la diferencia entre dos personas.
+
+    function saltoLinea(){
+        
+        console.log(`/n`);        
+    }
+
+    //Defino las variables que se encargaran de obtener los nombres y edades
+    let persona1 = prompt(`Bienvenido, Cual es tu Nombre:`);
+    saltoLinea();
+    
+    let edadPersona1= prompt(`Gracias ${persona1} indicame tu Edad: `);
+    //le indico al programa que debe interpretar los caracteres introducidos, si estos son numeros a numero enteros
+    let edadP1 = parseInt(edadPersona1);
+        
+
+        let persona2 = prompt(`Ahora coloca el Nombre de la siguiente persona con la que quieres comparar tu edad: `);
+        let edadPersona2 = prompt(`Cual es su edad:`);
+        let edadP2 = parseInt(edadPersona2);
+
+        //creo una condicion que revisa si el numero introducido no es un numero entero, por tanto indicara lo siguiente
+        
+            if (isNaN (edadP1) || isNaN (edadP2)){
+                alert("Introduciste un caracter no valido, por favor introduce un numero entero.");
+            } //fin if
+            else{
+                // si es entero realizara el promedio:
+            let diferencia = 0;
+            alert(`La Diferencia de edad entre ${persona1} y ${persona2} es: ` + (diferencia = edadP1 - edadP2));
+
+            }//fin else
+    
+</script>
+

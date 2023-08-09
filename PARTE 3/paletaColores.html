@@ -1,0 +1,148 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //recibo el tag de mi canvas
+    var pantalla = document.querySelector('canvas');
+    //indico el contexto de trabajo
+    var pincel = pantalla.getContext('2d');
+    //relleno el linezo con un color
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    //declaro la variable puedo dibujar que revisara si esta sobre la paleta de colores.
+    let puedoDibujar = false;
+    let colores = [`red`,`blue`,`green`];
+
+    //Variables para dibujar la paleta
+    //let xRojo = 0;//le asigno el valor de la posicion,
+   // let xVerde  = 50;//posicion cuadro verde
+   // let xAzul = 100;//posicion color azul
+    let xcuadrado = [0,50,100];
+    let yCuadrados = 0;//posicion y de todos los cuadrados
+    let sizeCuadrados = 50;//asigno el tamaño
+    let colorActual = `blue`;//creo e inicializo la variable en azul
+    var i;
+
+        //creo la funcion q dibuja el circulo, recibe el evnento (la ubicacion del mouse)
+        function dibujarCirculo(x,y,colorActual) {
+
+            if(puedoDibujar) {//reviso si puedo dibjuar esta
+                //aqui ya no pongo: var x = evento.pageX - pantalla.offsetLeft; por que cuando capturo el movimiento simplemente se lo envio.
+                pincel.fillStyle = colorActual;//metodo fillstyle para elegir el color de relleno
+                pincel.beginPath();//inicio el camino
+                pincel.arc(x, y, 5, 0, 2 * 3.14);//recibo los parametros para usar la funcion arc.
+                pincel.fill();//funcion fill para rellenar
+            }
+        }
+
+            //Función para dibujar cada uno de los cuadrados de la paleta
+            function dibujarCuadrado(x, y, size, color) {
+
+               pincel.fillStyle = color;//cambia el color de los cuadrados de acuerdo al array color
+                pincel.fillRect(x, y, size, size);//recibe los parametros para dibujarlos
+                pincel.fill();//funcion fill para rellenar el color de mi cuadrado
+
+
+            }
+                 //Función para dibujar la paleta de colores
+                 function dibujarPaletaColores() {
+
+                 //   dibujarCuadrado(xRojo, yCuadrados, sizeCuadrados, 'red');//llamada a la funcion dibujar cuadrado para indicar los colores.
+                 //   dibujarCuadrado(xVerde, yCuadrados, sizeCuadrados, 'green');
+                 //   dibujarCuadrado(xAzul, yCuadrados, sizeCuadrados, 'blue');
+                     dibujarCuadrado(xcuadrado, yCuadrados, sizeCuadrados, colores);
+                     var sumaBase = 0;
+                     for (i = 0; i < colores.length; i++) {
+                        var base = i;
+                        dibujarCuadrado(xcuadrado[i], yCuadrados, sizeCuadrados, colores[i]);
+                        
+                     }
+
+                  }
+
+                    pantalla.onmousemove = dibujarCirculo;//metodo que detecta cuando el mouse se mueve
+
+                    function habilitarDibujar() {//funcion para revisar si puedo dibujar sobre el lienzo
+
+                        puedoDibujar = true;//si habilitar es true.
+                    }
+
+                        function deshabilitarDibujar() {//funcion que deshabilita el dibujo
+
+                            puedoDibujar = false;//si habilitar (boleano) es false
+                        }
+
+                              //Función para delimitar el área
+                            function canDesingArea(xCoordenada,yCoordenada){//recibe las cordenadas x y y de los cuadrados
+
+                                    if ((xCoordenada >= 0 && (xCoordenada < (3*sizeCuadrados+5)) && 
+                                        (yCoordenada >=0 && (yCoordenada < (sizeCuadrados+5))))) {//tomando las cordenadas del mouse y las evaluar a las cordenadas de los cuadrados tomando en cuenta el radio (5) del circulo para delimitar de manera mas precisa.
+
+                                        return false;//si es es verdad regresa false
+
+                                    } else{
+
+                                        return true;//ded otro modo regresa true
+
+                                    }
+
+                            }    
+                                    //funcion que captura el movimiento del mouse dah!
+                                    function capturarMovimientoDelMouse(evento){
+
+                                        var x = evento.pageX - pantalla.offsetLeft;//lectura de la ubicacion en x
+                                        var y = evento.pageY - pantalla.offsetTop;//lectura de la ubicacion en y
+                                        //evaluamos con un condicional if si esta dentro de lo permitido en x,y 
+                                        if (canDesingArea(x,y)){
+
+                                                dibujarCirculo(x,y, colorActual);//llamara la funcion dibujar circulo
+
+                                        }
+
+                                    }
+
+                                        //funcion q selecciona el color de area recibiendo el evento de ubicacion del mouse
+
+                                        function seleccionarColor(evento, color) {
+
+                                            var x = evento.pageX - pantalla.offsetLeft;//recibe la ubicacion del mouse en x
+                                            var y = evento.pageY - pantalla.offsetTop;//la ubicacion en y
+
+                                            //Cada condición altera el color de la variable colorActual
+
+                                            //Comenzamos por la condición del eje Y que es común para todas
+                                            if (y > yCuadrados && y < (yCuadrados + sizeCuadrados)) {
+                                                    //condicion para la condicion del eje X
+                                                if(x > xcuadrado[0] && x < (xcuadrado[0] + sizeCuadrados)) {
+
+                                                    colorActual = "red";//si esta sobre el rojo
+                                                    console.log(colorActual);//selecciona el color del arreglo
+
+                                                } else if (x > xcuadrado[2] && x < (xcuadrado[2] + sizeCuadrados)) {
+
+                                                    colorActual = "green";
+
+                                                } else if(x > xcuadrado[1] && x < (xcuadrado[1] + sizeCuadrados)) {
+
+                                                    colorActual = "blue";
+
+                                                }            
+
+
+                                            }
+
+
+                                        }    
+
+
+    pantalla.onmousemove = capturarMovimientoDelMouse;
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    dibujarPaletaColores();
+
+    pantalla.onclick = seleccionarColor;
+
+</script>

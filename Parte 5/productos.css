@@ -1,0 +1,110 @@
+	header{
+		background-color: #BBBBBB;	
+	}
+
+		#navBar{
+			width: 940px;
+			position: relative;/*la ubicacion del menu*/
+			margin: 0 auto;
+			
+		}
+	nav{/*menu alineado al centro izquierdo de la barra de navegacion*/
+		position: absolute;
+		top:  110px;
+		right:  0px;
+
+	}
+	nav li{
+		/*definimos la barra de navegacion llamando nav y la lista (li), pues el formato
+		tenemos que ajustar el diplay*/
+		display: inline;
+		margin: 10px;/*con inlne le estoy diciendo a htmlque solo ocupe el tamaño ded su contenido*/
+	}
+		/*vamos a editar el stilo de la etiqueta a*/
+	nav a{
+		text-transform: uppercase;
+		color: #000000;
+		font-weight: bold;
+		font-size: 22px;
+		text-decoration: none;
+	}
+
+	/*usando la propiedad hover captura el comportamiento del mouse/usuario y el click*/
+	nav a:hover{
+		color: #C78C19;
+		/*agregar unba decoracion (subrayado)*/
+		text-decoration: underline;
+	}
+		#productos{
+			width: 940px;
+			margin: 0 auto;
+			padding: 50px;
+		}
+		/*usaremos la propiedad inline-block*/
+		#productos li{ 
+			display: inline-block;
+			text-align: center;
+			/*que ocupe el 30 de espacio de la pagina cada elemento de li*/
+			width:  30%;
+			/*que la alineacion de cada item sea vertical*/
+			vertical-align: top;
+			margin: 0 1.5%;
+			padding: 30px 20px;
+			box-sizing: border-box;
+			/*diseñar el borde*/
+			border-color: #000000;
+			/*ancho del borde*/
+			border-width: 2px;
+			/*estilo del borde, existen diferentes propiedasdes para los efectos visuales.*/
+			border-style: solid;
+			/*redondeando las aristas con prpopiedad border radius
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			/**forma simplificada*/
+			border-radius:  10px;
+		}
+		/*daremos animacion a cada productos*/
+		#productos li:hover{
+			/*damos color que al capturar el movimiento cambie de color */
+			border-color: #C78C19;
+		
+
+		}
+		/*animacion cuando sea la eleccion activa*/
+		#productos li:active{
+			border-color:  #088C19;
+		}
+		#productos h2{
+			font-size: 30px;
+			font-weight: bold;
+		}
+	/*aqui asignamos el ajuste para el tamaño de la deescripciond el producto*/
+	.producto-descripcion{
+		font-size: 18px;
+	}
+		/*cuando el mouse ande sobre el elemento productos, y aplica a h2 este efecto*/
+		#productos li:hover h2{/*hover investigarlo*/
+				/*damos color que al capturar el movimiento cambie de color */			
+				font-size: 33px;
+		}
+	/*aqui ajustamos el tamaño y la separacion de arriba del precio*/
+	.producto-precio{
+		font-size: 20px;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	/*seccion de asta abajo de la pagina*/
+	footer{
+		text-align: center;
+		background: url(branding/bg.jpg);
+		/*darle un spaciamiento*/
+		padding:  40px;
+	}
+		#copyright{
+			/*al cophy asignamos margenes y color specifico 6ceros = blanco*/
+			color: #FFFFFF;
+			font-size: 13px;
+			margin: 20px;
+		}

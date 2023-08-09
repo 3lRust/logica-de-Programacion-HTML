@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+
+<h1>Programa Juego de Adivinaciòn (funcion loteria)</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			function sorteo(n){
+
+			var numeroPensado = Math.round(Math.random() * n);
+			return numeroPensado;
+
+			}//fin sorteo
+
+				//creo la variable y coloco la funcion sorteo que crea un numero aleatorio con random, y redondeo el numero con round.
+				var numeroPensado = sorteo(18);
+				//lo comparo con el numero que ingrese el usuario
+				var numeroLanzado = parseInt(prompt(`Ingresa un nùmero entre 0-18`));
+
+					//creo una condicion para revisar el numero
+					if (numeroPensado == numeroLanzado){
+							imprimir(`Usted Acerto`);
+					}   else{
+							if (numeroLanzado < numeroPensado) {
+								imprimir(`Usted errò, su numero es menor al nùmero pensado el cual era ${numeroPensado}`);
+							}	else{
+								imprimir(`Usted errò, su numero es mayor al nùmero pensado el cual era ${numeroPensado}`);
+								}
+							
+						}//fin else1		
+</script>

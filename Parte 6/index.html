@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width-width">
+		<title>Barbería Alura</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<style type="text/css">
+			/*p{
+				//en esta òpcion el stylo va separado, pero sigue  denbtro del archivo index, sin mebargo con lnik lo llamamos de forma externa
+				text-align: center;
+			}*/
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+		
+	</head>
+
+	<body>
+
+		<header>
+			<div class="navBar">
+				<h1><img src="branding/logo.png" id="logo">
+				</h1>
+				<nav>
+
+					 <ul class="navUl">
+                        <!--tag <a> sirve apra referenceiar-->
+                        	<li><a href="productos.html">Home</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul> 
+				</nav>
+			</div>	
+		</header>
+				
+		<main>
+
+			<img class="banner" src="banner/banner.jpg">
+			<!--section indica que los bloques estan relacionados entresi solo son ordenados semanticamente en lugar de div-->
+				<section class="principal">
+					<h2 class="tituloPrincipal">Sobre la Barbería Alura</h2>
+					<img class="utensilios" src="diferenciales/utensilios.jpg" alt="utensilios de barberia">
+
+					<p>Ubicada en el corazón de la ciudad, la<strong> Barbería Alura</strong> trae para el mercado lo que hay de mejor para su cabello y barba.</p>
+
+					<p>Fundada en 2020, la Barbería Alura ya es destaque en la ciudad y conquista nuevos clientes diariamente. </p>
+
+					<p id="mision"><em>Nuestra misión es: <strong>"Proporcionar autoestima y calidad de vida a nuestros clientes"</strong>.</em></p>
+
+					<p>Ofrecemos profesionales experimentados que están constantemente observando los cambios y movimiento en el mundo de la moda, para así ofrecer a nuestros clientes las últimas tendencias.</p>
+
+					<p>El atendimiento posee un padrón de excelencia y agilidad, garantizando calidad y satisfacción de nuestros clientes.</p>
+				</section>
+
+				<section class="mapa">
+					<h1 class="tituloPrincipal">Nuestra ubicación<h1>
+						<p>Nuestro establecimiento esta ubicado en el corazon de la ciudad.</p>
+
+						<div class="mapaContenido">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15063.248370521704!2d-98.42851839999999!3d19.2905361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1684957581096!5m2!1ses-419!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
+						
+				</section>
+
+				<section class="diferencial">				
+					<!--creacion de una lista no ordenada con ul-->
+					<h3 class="tituloPrincipal">Diferenciales</h3>
+					<div class="contenido-diferencial">
+						<ul id=diferencialUl>
+							
+							
+							<li class="items">Atencion personalizada a los clientes</li>
+							<li class="items">Un lugar para sentirte Unico</li>
+							<li class="items">Localización</li>
+							<li class="items">Profesionales calificados</li>
+							<li class="items">Puntualidad</li>
+							<li class="items">Limpieza</li>
+						</ul><img src="diferenciales/diferenciales.jpg" class="imagenDiferencial">
+					</div>
+					<div class="video">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/yZDd1uZUPfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>	
+					
+				</section>	
+
+				
+		</main>
+
+		 <footer>
+            <img src="branding/logo-blanco.png">
+            <p id="copyright">&copy Copyright Barber Alura - 2023</p>
+        </footer>
+
+	</body>
+
+</html>

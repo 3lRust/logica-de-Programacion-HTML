@@ -1,0 +1,53 @@
+<meta charset="UTF-8">
+<script>
+
+    function saltarLinea(){
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+
+    }//fin saltar linea
+
+        function imprimir(frase){
+
+            document.write(frase);
+            saltarLinea();
+
+        }//fin imprimir
+
+                var inicioDeSesionRegistrado = "alura";
+                var contrasenhaRegistrada = "alura321";
+
+               
+                let attempts = 3;
+                let intento = 1;
+               
+                    //creo iteracion para intentar x cantidad de veces
+                        while(intento <= attempts){
+                             
+                            //creo las variables para almacenar los datos
+                             var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+                             var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+                             //creo una condicion para revisar los datos de ingreso
+                            if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+                                alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+                                break;
+                            } else {
+                                alert("inicio de sesión inválido. Favor intente de nuevo");
+                             
+                            }
+                               intento++;
+                        }//fin while
+
+                                    //como el todo tierno fallo le damos opciones para correjirlo
+                                    if (inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada){
+                                        imprimir(`Usted ingreso en el ${intento} `);
+                                        
+                                    }   else{
+                                            imprimir(`Usted ya realizo: ${intento}, intentos, lo invito a contactar a soporte tecnico`);
+                                        }
+
+                   imprimir(`fin`);
+</script>

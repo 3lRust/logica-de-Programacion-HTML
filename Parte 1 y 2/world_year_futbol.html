@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+
+<h1>Programa año Mundial de FIFA</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+			let primerMundial = 1930;
+			let actualyear = parseInt(prompt(`Bienvenido Indicame el año actual:`));
+			
+				//ciclo while para ejecutar una accion mientras esta se cumpla: (iteraciones)
+				while (primerMundial <= actualyear) {
+
+					imprimir(`En este año se celebro un Torneo mundial: ${primerMundial}`);
+					primerMundial = primerMundial +4;
+					
+				}
+					alert(`Fin`)
+
+
+</script>

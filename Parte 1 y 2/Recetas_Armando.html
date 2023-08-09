@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<h1>Recetas de Armando </h1>
+
+<script>
+    //declaro variables.
+  var ingredientes = [];
+    //convierto el string a entero
+  var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+  var contador = 1;
+  //uso ciclo while para indicar la cantidad de veces a repetir el ciclo
+  while(contador <= cantidad) {
+    //creo las variables de ingreso de ingrediente y evaluacion (existe), como falso.
+    var ingrediente = prompt("Informe el ingrediente " + contador);
+    var existe = false;
+    //evaluo la posicion del arreglo, con la posicion de los ingredientes dentro del arreglo, para que valla aumentando
+    for(var posicion = 0; posicion < ingredientes.length; posicion++) {
+        //evaluo si ingredientes y su indice es igual al ingrediente que se introdujo
+      if(ingredientes[posicion] == ingrediente){
+        existe = true;
+        //si es verdad envia el siguiente mensaje
+        alert("repetido " + ingrediente);
+        break;
+      }//fin if
+     }//fin for
+     //evaluo si no existe que lo almacene
+     if(existe == false) {
+      ingredientes.push(ingrediente);
+      contador++;
+     }
+   }
+
+   console.log(ingredientes);
+</script>

@@ -1,0 +1,54 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function dibujarRectangulo(x, y, base, altura, colores) {
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=colores;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    }
+
+    function escribirTexto(x , y, texto) {
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+
+
+    //Aquí viene el texto faltante
+    //creo un arreglo de los datos obtenidos entre años, cada valor representa un %
+        let serie2009 = [6, 47, 41, 3, 3];
+        let serie2019 = [81, 9, 3, 3, 4];
+        let base = parseInt(prompt(`Introduce el tamaño de la base`));
+        //tambien se crea otro array con los colores.
+           var colores = ["blue","green","yellow", "red","gray"];
+
+           //creo la funcion dibujar barra, la cual recibira los parametros indicados dentro del ()
+           function dibujarBarra(x,y,base,serie,colores,texto){
+
+                 //creo la funcion for que hara la iteracion/ciclo asta que altura haya recorrido todo el arreglo de serie
+                for (let altura = 0; altura < serie.length; altura ++) {
+                    //llamo la funcion dibujar rectangulo y le indico los parametros dentro del (), para indicarle que datos introducir.
+                     dibujarRectangulo(x,y,base,serie[altura],colores[altura]);
+                     //aqui le indico a la coordenada y que en base a los valores de la seria(que sera recorrida por altura), esta se incremente
+                     y += serie[altura];
+                    
+                }
+                //aqui le indico a la funcion escribir texto, que reciba los parametros, pero que se base en la base indicada, mas el texto
+              //  escribirTexto(x, y + Math.max(...serie) + base, texto);
+              escribirTexto(x,y+base,texto);
+
+           }
+
+                //llamo la funcion dibujarBarra
+                   dibujarBarra(50, 50,base, serie2009, colores, "2009");
+                        dibujarBarra(150, 50,base, serie2019, colores, "2019");
+
+</script>

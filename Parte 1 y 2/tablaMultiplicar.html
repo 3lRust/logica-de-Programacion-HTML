@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+
+<h1>Programa Tablas de multiplicar</h1>
+
+<script type="text/javascript">
+	
+	function saltarLinea(){
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+
+	}//fin saltar linea
+
+		function imprimir(frase){
+
+			document.write(frase);
+			saltarLinea();
+
+		}//fin imprimir
+
+		let multiplicador = 1;
+		//introdusco la tabla a multiplicar:
+		let tabla = parseInt(prompt(`Ingresa la tabla de multiplicacion que quieres:`));
+		
+		//opcion con ciclo while
+		/*while (multiplicador <= 10){
+			imprimir( tabla * multiplicador );
+			multiplicador += 1;
+			
+		}*/
+		//opcion con ciclo for
+		for (multiplicador = 1; multiplicador <= 10; multiplicador++) {
+			
+			imprimir( tabla * multiplicador );
+			
+		}//fin for
+
+</script>

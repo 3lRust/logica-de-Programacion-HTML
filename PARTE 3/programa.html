@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	document.write("<h1>HOLA</h1>");
+
+	//vmaosa crear una variable que reciba el canvas
+	let pantalla = document.querySelector(`canvas`);
+	let pincel = pantalla.getContext(`2d`); 
+
+			//fyllStyle es una caracteristica/propiedad asi que sedebe 
+			pincel.fillStyle = "lightgrey";
+			//indicamos al pincel que rellene la pantalla con la funcion fillRect
+			pincel.fillRect(0,0,600,400);
+
+				//fyllStyle es una caracteristica/propiedad asi que sedebe 
+			pincel.fillStyle = "green";
+			//indicamos al pincel que rellene la pantalla con la funcion fillRect
+			pincel.fillRect(0,0,200,400);
+
+			//fyllStyle es una caracteristica/propiedad asi que sedebe 
+			pincel.fillStyle = "red";
+			//indicamos al pincel que rellene la pantalla con la funcion fillRect
+			pincel.fillRect(400,0,200,400);
+
+			//defino un nuevo colocr
+			pincel.fillStyle = "yellow";
+			//le indico que inicie un recorrido
+			pincel.beginPath();
+			//le indico que se mueva en la siguiente direccion
+			pincel.moveTo(300,200);
+			//le indco que dibuje una linea:
+			pincel.lineTo(200,400);
+			//le digo que dibuje otra linea:
+			pincel.lineTo(400,400);
+			//ahora le digo que llene ese grafico creado con las lineas anteriores
+			pincel.fill();
+
+			//ahora debo graficar una circunferencia:
+
+			//defino un nuevo color
+			pincel.fillStyle = "blue";
+			//le indico que inicie un recorrido
+			pincel.beginPath();
+			//le indico que cree un circulo con los siguientes parametros
+			pincel.arc(300,200,50,0,2*3.14);//la funcion arc crea una circunferencia
+			pincel.fill();
+
+
+
+
+</script>

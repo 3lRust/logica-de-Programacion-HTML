@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Mostrar texto escrito</button>
+
+<script>
+
+    //caja de texto que recibe el texto
+    var input = document.querySelector("input");
+
+    //funcion que obtiene el texto ingresado y lo devuelve como alerta
+    function mostrarTexto() {
+
+        alert(input.value);
+    }
+
+    //creamos el botton que sera el trigger del programa
+    var button = document.querySelector("button");
+    //asignamos la ejecucion de lectura del texto llamando la iteracion de la fucncion
+    button.onclick = mostrarTexto;
+</script>

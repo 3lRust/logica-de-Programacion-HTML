@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA Calculo IMC</h1>
+<script>
+
+    //creo la funcion saltar linea
+    function saltarLinea() {
+        //coloco la impresion en pantalla para saltar linea
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");  
+        //con hr creo lineas de separacion por cada argumento/texto
+        document.write("<hr></hr>");  
+        document.write("<br>");    
+        document.write("<br>");   
+    }  
+    //creo la funcion imprimir texto/frase
+    function imprimir(frase) {
+        //le indico que en base a la frase que se introdusca en imprimir la coloque a la variable frase y uso el tag BIG par hacer grande la letra
+        document.write("<big>" + frase + "</big>");
+        saltarLinea();
+    }
+
+    //creo la funcion calcular indice de masa corporal
+    function calcularIMC(pesoPersona, alturaPersona){
+                //genero la evaluacion y calculo
+                imc = (pesoPersona/ (alturaPersona * alturaPersona) );
+                //imprimo los valores psando el parametro
+                 imprimir(`${nombre} tu Indice de Masa Corporal es: ` + imc );
+    }
+
+    alert("Bienvenido el siguiente programa te permitira calcular el Indice de Masa Corporal");
+
+    
+    //pido el nombre de quien IMc sera calculado:
+    nombre = prompt("Indicame tu nombre:");
+    pesoPersona = prompt(`${nombre} indicame tu Peso en KG:`);
+    alturaPersona = prompt(`${nombre} indicame tu Altura en CM:`);
+
+    //mando a llamar la funcion creada antes, dandole los parametros a calcular.
+    calcularIMC(pesoPersona,alturaPersona);
+
+   
+
+</script>

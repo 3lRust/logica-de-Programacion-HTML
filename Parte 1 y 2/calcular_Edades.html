@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<script>
+
+
+//Defino la funcion para saltos de linea:
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+//ahora defino la funcion para imprimir en pantalla cualquier texto que se requiera, usando el salto de linea para estilizar un poco:
+    function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+    }   
+    //Defino las variables a utilizar en este programa:
+        let year = prompt(`El año actual es: `);
+        let actualYear = parseInt(year);
+        let nombre = "";
+        let edad = 0;
+        let cantPersonas = prompt(`A cuantas personas se les va a calcular su edad?: `);
+        //me aseguro de volver entero el numero introducido usando la funcion parseInt que se usa para convertir strings en enteros.
+       parseInt(cantPersonas);
+            //creo una condicional para revisar si el caracter/string introducido es un numero, si es asi continuo:
+           if(!isNaN(cantPersonas)){
+                //uso el ciclo for, para ejecutar la cantidad de personas que van a calcular su edad
+                for (let persona = 0; persona <= cantPersonas; persona++) {
+                    //asigno valor a la variable nombre
+                     nombre = prompt(`Introduce el nombre de quien va a calcular su edad: `);
+                     //asigno valor a la variable edad
+                    edad = prompt(`Introduce tu fecha de nacimiento: `);
+                    //convierto a entero la variable edad
+                    parseInt(edad);
+                    //genero el calculo de la edad:
+                     let calculoEdad = year - edad;
+                     //imprimo la edad:
+                imprimir(`${nombre} tu edad es: ` + calculoEdad);
+                }
+                //de lo contrario muestro que introdujo un caracter no admitido.
+            } else{
+                    alert ("los datos que introduciste son erroneos");
+                   }
+
+</script>
